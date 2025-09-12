@@ -9,21 +9,18 @@
       }
     },
     {
-      "src": "backend/server.js",
+      "src": "backend/api/projects.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/server.js"
+      "src": "/api/projects",
+      "dest": "/backend/api/projects.js"
     },
     {
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
-  ],
-  "env": {
-    "GITHUB_TOKEN": "@github_token"
-  }
+  ]
 }
