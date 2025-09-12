@@ -1,0 +1,17 @@
+[
+    "supabase",
+    "posthog",
+    "temporalio",
+    "metabase",
+    "calcom",
+    "outline",
+    "airbytehq",
+    "hasura",
+    "refinedev",
+    "pydantic",
+    "wandb",
+    "prefecthq",
+    "replicate",
+    "astral-sh",
+    "dagster-io"
+  ]
