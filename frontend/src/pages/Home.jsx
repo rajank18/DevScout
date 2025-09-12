@@ -19,7 +19,7 @@ function Home() {
       if (language) params.append('language', language);
       if (yc) params.append('yc', 'true');
       
-      const response = await axios.get(`http://localhost:5000/api/projects?${params.toString()}`);
+            const response = await axios.get(`/api/projects?${params.toString()}`);
       setProjects(response.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
