@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import SearchFilter from "../components/SearchFilter";
 import RepositoriesTable from "../components/RepositoriesTable";
 const API = import.meta.env.VITE_API_URL;
+console.log('API URL:', API); // Debug log
 
 function Home() {
   const [projects, setProjects] = useState([]);
@@ -20,8 +21,10 @@ function Home() {
       if (language) params.append('language', language);
       if (yc) params.append('yc', 'true');
       
+            console.log('Making request to:', `${API}/api/projects?${params.toString()}`); // Debug log
             const response = await axios.get(`${API}/api/projects?${params.toString()}`);
-      setProjects(response.data);
+            console.log('Response received:', response.data); // Debug log
+            setProjects(response.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
       setProjects([]);
