@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import SearchFilter from "../components/SearchFilter";
 import RepositoriesTable from "../components/RepositoriesTable";
+const API = import.meta.env.VITE_API_URL;
 
 function Home() {
   const [projects, setProjects] = useState([]);
@@ -19,7 +20,7 @@ function Home() {
       if (language) params.append('language', language);
       if (yc) params.append('yc', 'true');
       
-            const response = await axios.get(`/api/projects?${params.toString()}`);
+            const response = await axios.get(`${API}/api/projects?${params.toString()}`);
       setProjects(response.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
